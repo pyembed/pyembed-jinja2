@@ -1,0 +1,6 @@
+[run]
+include =
+  pyembed/jinja2/*.py
+
+omit =
+  pyembed/jinja2/test/*.py

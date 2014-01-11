@@ -1,0 +1,21 @@
+language: python
+python:
+- '2.7'
+- '3.3'
+install:
+- pip install -e .
+- pip install coverage coveralls
+script:
+- coverage run setup.py test
+- coveralls
+- coverage report --fail-under=100
+deploy:
+  provider: pypi
+  on:
+    python: 2.7
+    tags: true
+    repo: pyembed/pyembed-jinja2
+  password:
+    secure: iGe0GNFc4BaHFO1JYstbgEM019AzeFS+qi3TPKsFsXAAaSUL1r5GeFxfH+GBvttuLjBYcZLLAk0R4Pw4emavlOrFqSTetOfox2gD8RFqPkxDsRKX8H8uWTTjjNJ3f4Pl0t+4rkJemJaWBCMg0nQ35J+xWqI1/ZHK/9t11J2K2QA=
+  user:
+    secure: UDhZmn1v22G8AS7ruTCC4xDvECGYJHnJxsXaNymSuipIcNR/ZkKI9a4oj1QPnvLb7d7qjC94Nt/+YQ9rxGUofsbLypUe6UaVCxvtAtccMvb40RZHa8CemCsLX7U+8oM61BD/wHV9LHDLAk6FbS9cALEW9UTWkGqvBfl75BwjXKc=
