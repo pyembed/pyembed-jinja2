@@ -5,12 +5,18 @@ PyEmbed-Jinja2
     :target: http://travis-ci.org/pyembed/pyembed-jinja2
 .. image:: https://coveralls.io/repos/pyembed/pyembed-jinja2/badge.png
     :target: https://coveralls.io/r/pyembed/pyembed-jinja2
-.. image:: https://pypip.in/v/pyembed-jinja2/badge.png
-    :target: https://crate.io/packages/pyembed-jinja2/
 .. image:: https://pypip.in/d/pyembed-jinja2/badge.png
-    :target: https://crate.io/packages/pyembed-jinja2/
+    :target: https://pypi.python.org/pypi/pyembed-jinja2/
+.. image:: https://pypip.in/v/pyembed-jinja2/badge.png
+    :target: https://pypi.python.org/pypi/pyembed-jinja2/
+.. image:: https://pypip.in/wheel/pyembed-jinja2/badge.png
+    :target: https://pypi.python.org/pypi/pyembed-jinja2/
+.. image:: https://pypip.in/egg/pyembed-jinja2/badge.png
+    :target: https://pypi.python.org/pypi/pyembed-jinja2/
+.. image:: https://pypip.in/license/pyembed-jinja2/badge.png
+    :target: https://pypi.python.org/pypi/pyembed-jinja2/
 
-PyEmbed plugin for rendering embeddings using Jinja2 templates.
+`PyEmbed`_ plugin for rendering embeddings using `Jinja2`_ templates.
 
 Usage
 -----
@@ -30,6 +36,8 @@ where `path` is the path to a directory containing Jinja2 templates:
 
 If you don't supply one of these files, a default embedding will be used
 instead.
+
+For more information, see the `PyEmbed`_ website.
 
 Compatibility
 -------------
@@ -77,4 +85,6 @@ PyEmbed-Jinja2 is distributed under the MIT license.
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+.. _PyEmbed: http://pyembed.github.io
+.. _Jinja2: http://jinja.pocoo.org/docs/
 .. _GitHub: https://github.com/pyembed/pyembed-jinja2
