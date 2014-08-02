@@ -50,7 +50,8 @@ class Jinja2Renderer(PyEmbedRenderer):
 
         return template.render(params)
 
-    def __create_loader(self, template_dir):
+    @staticmethod
+    def __create_loader(template_dir):
         return ChoiceLoader([
             FileSystemLoader(template_dir),
             PackageLoader('pyembed.jinja2')

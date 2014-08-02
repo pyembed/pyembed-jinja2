@@ -28,7 +28,7 @@ from hamcrest import assert_that, equal_to
 
 def test_should_embed_with_jinja2_template():
     renderer = Jinja2Renderer('pyembed/jinja2/test/fixtures')
-    embedding = PyEmbed(renderer).embed(
+    embedding = PyEmbed(renderer=renderer).embed(
         'http://www.youtube.com/watch?v=qrO4YZeyl0I')
     assert_that(embedding, equal_to(
         'Lady Gaga - Bad Romance by LadyGagaVEVO from ' +

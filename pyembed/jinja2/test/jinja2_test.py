@@ -20,12 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-from pyembed.jinja2 import Jinja2Renderer
 from pyembed.core import response
-
 from hamcrest import assert_that, equal_to
-from mock import Mock
-import pytest
+
+from pyembed.jinja2 import Jinja2Renderer
 
 
 def test_default_embed_photo():
