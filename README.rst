@@ -1,5 +1,5 @@
 PyEmbed-Jinja2
-===============
+==============
 
 .. image:: https://secure.travis-ci.org/pyembed/pyembed-jinja2.png?branch=master
     :target: http://travis-ci.org/pyembed/pyembed-jinja2
@@ -42,7 +42,7 @@ For more information, see the `PyEmbed`_ website.
 Compatibility
 -------------
 
-PyEmbed-Jinja2 has been tested with Python 2.7 and 3.3.
+PyEmbed-Jinja2 has been tested with Python 2.7, 3.3 and 3.4.
 
 Installation
 ------------
