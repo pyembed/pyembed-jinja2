@@ -23,7 +23,10 @@
 from pyembed.core import PyEmbed
 from pyembed.jinja2 import Jinja2Renderer
 
+import vcr
 
+
+@vcr.use_cassette('pyembed/jinja2/test/fixtures/cassettes/embed_template.yml')
 def test_should_embed_with_jinja2_template():
     renderer = Jinja2Renderer('pyembed/jinja2/test/fixtures')
     embedding = PyEmbed(renderer=renderer).embed(
