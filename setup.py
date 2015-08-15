@@ -65,7 +65,6 @@ setup(
         'jinja2'
     ],
     tests_require=[
-        'PyHamcrest',
         'mock',
         'pytest'
     ],

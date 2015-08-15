@@ -21,7 +21,6 @@
 # THE SOFTWARE.
 
 from pyembed.core import response
-from hamcrest import assert_that, equal_to
 
 from pyembed.jinja2 import Jinja2Renderer
 
@@ -35,10 +34,8 @@ def test_default_embed_photo():
 
     oembed_response = response.OEmbedPhotoResponse(
         create_value_function(values))
-    assert_that(
-        Jinja2Renderer('.').render('http://example.com', oembed_response),
-        equal_to('<img src="http://example.com/bees.jpg" ' +
-                 'width="300" height="200" />'))
+    assert Jinja2Renderer('.').render('http://example.com', oembed_response) == \
+        '<img src="http://example.com/bees.jpg" width="300" height="200" />'
 
 
 def test_default_embed_video():
@@ -49,9 +46,7 @@ def test_default_embed_video():
 
     oembed_response = response.OEmbedVideoResponse(
         create_value_function(values))
-    assert_that(
-        Jinja2Renderer('.').render('http://example.com', oembed_response),
-        equal_to(embedding))
+    assert Jinja2Renderer('.').render('http://example.com', oembed_response) == embedding
 
 
 def test_default_embed_rich():
@@ -62,9 +57,7 @@ def test_default_embed_rich():
 
     oembed_response = response.OEmbedRichResponse(
         create_value_function(values))
-    assert_that(
-        Jinja2Renderer('.').render('http://example.com', oembed_response),
-        equal_to(embedding))
+    assert Jinja2Renderer('.').render('http://example.com', oembed_response) == embedding
 
 
 def test_default_embed_link():
@@ -73,9 +66,8 @@ def test_default_embed_link():
 
     oembed_response = response.OEmbedLinkResponse(
         create_value_function(values))
-    assert_that(
-        Jinja2Renderer('.').render('http://example.com', oembed_response),
-        equal_to('<a href="http://example.com">Bees!</a>'))
+    assert Jinja2Renderer('.').render('http://example.com', oembed_response) == \
+        '<a href="http://example.com">Bees!</a>'
 
 
 def test_should_embed_with_template():
@@ -90,8 +82,7 @@ def test_should_embed_with_template():
     renderer = Jinja2Renderer('pyembed/jinja2/test/fixtures')
     embedding = renderer.render('http://example.com', oembed_response)
 
-    assert_that(embedding, equal_to(
-        'Bees by Ian Bees from http://example.com'))
+    assert embedding == 'Bees by Ian Bees from http://example.com'
 
 
 def test_should_use_default_embedding_if_no_template():
@@ -104,9 +95,7 @@ def test_should_use_default_embedding_if_no_template():
         create_value_function(values))
     renderer = Jinja2Renderer('pyembed/jinja2/test/fixtures')
 
-    assert_that(
-        renderer.render('http://example.com', oembed_response),
-        equal_to(embedding))
+    assert renderer.render('http://example.com', oembed_response) == embedding
 
 
 def create_value_function(values):
