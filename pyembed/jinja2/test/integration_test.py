@@ -23,13 +23,14 @@
 from pyembed.core import PyEmbed
 from pyembed.jinja2 import Jinja2Renderer
 
-from hamcrest import assert_that, equal_to
+import vcr
 
 
+@vcr.use_cassette('pyembed/jinja2/test/fixtures/cassettes/embed_template.yml')
 def test_should_embed_with_jinja2_template():
     renderer = Jinja2Renderer('pyembed/jinja2/test/fixtures')
     embedding = PyEmbed(renderer=renderer).embed(
         'http://www.youtube.com/watch?v=qrO4YZeyl0I')
-    assert_that(embedding, equal_to(
-        'Lady Gaga - Bad Romance by LadyGagaVEVO from ' +
-        'http://www.youtube.com/watch?v=qrO4YZeyl0I'))
+    assert embedding == \
+        'Lady Gaga - Bad Romance by LadyGagaVEVO from ' + \
+        'http://www.youtube.com/watch?v=qrO4YZeyl0I'
